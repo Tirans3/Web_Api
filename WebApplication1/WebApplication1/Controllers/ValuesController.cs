@@ -13,9 +13,10 @@ namespace WebApplication1.Controllers
     {
         BookContext db = new BookContext();
 
-        public IEnumerable<Book> GetBooks()
+        public hh GetBooks()
         {
-            return db.Books;
+            var response = Request.CreateResponse<IEnumerable<Book>>(HttpStatusCode.OK, db.Books);
+            return response;
         }
 
         public Book GetBook(int id)
