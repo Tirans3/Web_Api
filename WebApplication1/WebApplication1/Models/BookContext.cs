@@ -1,11 +1,17 @@
 ﻿using System.Data.Entity;
-
+using Microsoft;
 namespace WebApplication1.Models
 {
     
         public class BookContext : DbContext
         {
-            public DbSet<Book> Books { get; set; }
+        public BookContext():base("DBConnection")
+        {
+          
+        }
+       
+        public DbSet<Book> Books { get; set; }
+        
         }
     
 }
